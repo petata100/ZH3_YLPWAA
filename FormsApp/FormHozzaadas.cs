@@ -28,12 +28,12 @@ namespace FormsApp
 
         private void textBox1_Validating(object sender, CancelEventArgs e)
         {
-            Regex r = new Regex("[0-9]");
+            Regex r = new Regex("^[0-9]{1}$");
 
             if (!r.IsMatch(textBox1.Text))
             {
                 e.Cancel = true;
-                errorProvider1.SetError(textBox1, "Egész számot adj meg!");
+                errorProvider1.SetError(textBox1, "Egyjegyű egész számot adj meg!");
             }
         }
 
